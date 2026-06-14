@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "app_bucket" {
 
-  bucket = "replace-with-unique-bucket-name"
+  bucket = "rajnishaipractise"
 
   tags = {
     Name = "ai-governance-bucket"
