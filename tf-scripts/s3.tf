@@ -1,9 +1,14 @@
-resource "aws_s3_bucket" "app_bucket" {
+resource "random_id" "bucket_suffix" {
+  byte_length = 4
+}
 
-  bucket = "Terraform_agentic_ai_agent_demo098712"
+resource "aws_s3_bucket" "app_bucket" {
+  bucket = "terraform-agentic-ai-agent-demo-${random_id.bucket_suffix.hex}"
 
   tags = {
-    Name = "ai-governance-bucket"
+    Name        = "ai-governance-bucket"
+    Environment = "dev"
+    Owner       = "devops"
   }
 }
 
